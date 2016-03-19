@@ -36,18 +36,14 @@ $(function(){
 
 			})();
 		
-			var x = seatArray.indexOf(seatIndex);
-			if ( x === -1) {
+			var index = seatArray.indexOf(seatIndex);
+			if ( index === -1) {
 				seatArray.push(seatIndex);
-				
 			}
 			else {
-				seatArray.splice(x, 1);
-				
+				seatArray.splice(index, 1);
 			}
-
 			seatBox = seatArray.join(", ");
-
 			$('#selectedSeat').text(seatBox);
 
 		})();
@@ -55,15 +51,28 @@ $(function(){
 	});
 
 	button.on('click', function() {
+		console.log('am I working?');
 
 		var guest = new Person();
+		if(!guest.name){
+			$('#nameInput').addClass('redBorder');
+			return false;
+		}
+		if(!guest.date){
+			$('#dateInput').addClass('redBorder');
+			$('#nameInput').removeClass('redBorder');
+			return false;
+		}
+
 		$('.seat-chart').children().each(function() {
+
+
 			if ($(this).hasClass('reserved')){
 				$(this).removeClass('available reserved');
 				$(this).addClass('unavailable');
 				$(this).text('Unavailable. Mouse Over for Details')
 				$(this).hover(function() {
-					$(this).text('Reserved By:' + guest.name + ' on ' +guest.date);
+					$(this).text('Reserved By: ' + guest.name + ' on ' +guest.date);
 				}, function() {
 					$(this).text('Unavailable. Mouse Over for Details');
 
@@ -73,17 +82,15 @@ $(function(){
 		
 
 
-		$('#nameInput').val('');
+		$('#nameInput').val('').removeClass('redBorder');
 		$('#selectedSeat').text('');
-		$('#dateInput').val('');
+		$('#dateInput').val('').removeClass('redBorder');
 		$('#messageInput').val('');
 		seatArray =[];
 		
 	});
 })
 
-//hi
-console.log('hello');
 
 
 
