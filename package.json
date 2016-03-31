@@ -1,0 +1,24 @@
+{
+  "name": "seat_res_app",
+  "version": "1.0.0",
+  "description": "Application made with Jquery. Kiosk seat reservations.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Epothos333/seat-res-starter.git"
+  },
+  "keywords": [
+    "seat"
+  ],
+  "author": "Edwin <edwinaoraha@yahoo.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Epothos333/seat-res-starter/issues"
+  },
+  "homepage": "https://github.com/Epothos333/seat-res-starter#readme"
+}
